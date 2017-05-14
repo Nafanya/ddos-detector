@@ -124,6 +124,12 @@ def prevent_attack(demo, attacks):
                 subprocess.check_output(['sudo', 'iptables'] + cmd.split(' '))
 
 
+def remove_rules():
+    global added_rules
+    for rule in added_rules:
+        cmd = rule.replace('-A', '-D')
+        subprocess.check_output(['sudo', 'iptables'] + cmd.split(' '))
+
 
 def main(demo, soft, hard):
     # sys.stdout.write('\033[2J')
@@ -145,6 +151,8 @@ def main(demo, soft, hard):
             time.sleep(0.5)
         except KeyboardInterrupt:
             sys.stdout.write('\033[K')
+            if not demo:
+                remove_rules()
             break
 
 
