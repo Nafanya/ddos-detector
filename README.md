@@ -25,3 +25,12 @@ List of available options
 | `--hard-limit` | `no`     | `100`       | Number of connections to be treated as a real attack                              |
 | `--demo`       | `no`     | `False`     | Demo mode, iptables rules are not added                                           |
 
+## Screenshots
+
+Main view
+
+<img src="https://github.com/Nafanya/ddos-detector/blob/master/media/main.png" width="200">
+
+Detected and prevented flood attack.
+
+<img src="https://github.com/Nafanya/ddos-detector/blob/master/media/in-action.png" width="200">
